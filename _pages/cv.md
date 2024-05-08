@@ -1,1 +1,1 @@
-<embed src="{{ site.baseurl }}/files/paper1.pdf" width="600" height="700" type='application/pdf'> 
+<embed src="https://HaochenW.github.io/files/cv.pdf" type="application/pdf" width="600px" height="500px" />
