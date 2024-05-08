@@ -1,1 +1,1 @@
-<embed src="https://github.com/HaochenW/HaochenW.github.io/blob/master/files/cv.pdf" type="application/pdf" width="600px" height="500px" />
+<embed src="https://web.stanford.edu/~rhiju/RhijuDas_CurriculumVitae.pdf" type="application/pdf" width="600px" height="500px" />
