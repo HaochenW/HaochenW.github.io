@@ -21,7 +21,7 @@ repository               : "HaochenW/HaochenW.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "photo_equal.png"
+  avatar           : "photo_equal.jpg"
   name             : "Dr. Haochen Wang"
   pronouns         : # example: "she/her"  
   bio              : "Generative AI for biosequence design"
