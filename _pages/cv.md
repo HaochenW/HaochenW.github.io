@@ -7,5 +7,5 @@ redirect_from:
   - /resume
 ---
 
-<embed src="https://haochenw.github.io/files/cv.pdf" type="application/pdf"/>
+<embed src="https://haochenw.github.io/files/cv.pdf" type="application/pdf" />
 
