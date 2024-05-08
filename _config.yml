@@ -21,14 +21,14 @@ repository               : "HaochenW/HaochenW.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
-  name             : "Your Sidebar Name"
+  avatar           : "photo.png"
+  name             : "Dr. Haochen Wang"
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
-  location         : "Earth"
-  employer         : "Red Brick University"
+  bio              : "Generative AI for biosequence design"
+  location         : "Beijing"
+  employer         : "Tsinghua University"
   uri              : # URL
-  email            : "none@example.org" 
+  email            : "hcwang1996@gmail.com" 
 
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile
