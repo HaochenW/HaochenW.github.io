@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -10,6 +10,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
+      --bg: #ffffff;
+      --card: #ffffff;
+      --text: #111418;
+      --muted: #5b6470;
+      --accent: #0066cc;
+      --link: #0a66c2;
+      --chip: #f2f5f8;
+      --border: #e6e9ee;
+    }
+    [data-theme="dark"] {
       --bg: #0b0d10;
       --card: #12161c;
       --text: #e6edf3;
@@ -17,42 +27,53 @@
       --accent: #4cc9f0;
       --link: #89dceb;
       --chip: #1b2330;
+      --border: #1f2835;
     }
     * { box-sizing: border-box; }
     html, body { margin: 0; padding: 0; }
     body {
       font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      background: linear-gradient(180deg, #0b0d10 0%, #0e1116 100%);
+      background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.7;
+      font-size: 17px; /* 增大字体 */
     }
     a { color: var(--link); text-decoration: none; }
     a:hover { text-decoration: underline; }
     .wrap { max-width: 980px; margin: 0 auto; padding: 40px 20px 80px; }
     header { display:flex; align-items:center; gap:24px; flex-wrap: wrap; }
-    header img { width: 92px; height:92px; border-radius: 20px; border: 1px solid #2a3441; object-fit: cover; }
+    header img { width: 96px; height:96px; border-radius: 20px; border: 1px solid var(--border); object-fit: cover; }
     .title { flex: 1; min-width: 280px; }
-    h1 { margin: 0 0 6px; font-size: 32px; letter-spacing: 0.2px; }
+    h1 { margin: 0 0 8px; font-size: 34px; letter-spacing: 0.2px; }
+    h2 { font-size: 22px; }
     .subtitle { color: var(--muted); font-size: 16px; }
     .chips { margin-top: 10px; display:flex; flex-wrap:wrap; gap:8px; }
-    .chip { background: var(--chip); border: 1px solid #263041; padding:6px 10px; border-radius: 999px; font-size: 12px; color:#c9d4df; }
-    nav { margin-top: 24px; display:flex; gap:16px; flex-wrap:wrap; }
-    nav a { padding: 8px 12px; background: #122033; border: 1px solid #223046; border-radius: 10px; font-weight: 500; }
-    nav a:hover { background:#0f1a29; }
-    section { margin-top: 42px; background: var(--card); border:1px solid #1f2835; border-radius: 16px; padding: 24px; }
-    section h2 { margin: 0 0 14px; font-size: 22px; letter-spacing: 0.3px; }
-    .grid { display:grid; grid-template-columns: 1fr; gap:16px; }
+    .chip { background: var(--chip); border: 1px solid var(--border); padding:6px 10px; border-radius: 999px; font-size: 12px; color:#3b4652; }
+    nav { margin-top: 18px; display:flex; gap:12px; flex-wrap:wrap; }
+    .btn, nav a { padding: 10px 14px; background: #f4f7fb; border: 1px solid var(--border); border-radius: 10px; font-weight: 500; color:#0f1720; }
+    nav a:hover, .btn:hover { background:#edf2f7; }
+    section { margin-top: 30px; background: var(--card); border:1px solid var(--border); border-radius: 16px; padding: 20px; }
+    .grid { display:grid; grid-template-columns: 1fr; gap:14px; }
     @media (min-width: 820px) { .grid.two { grid-template-columns: 1fr 1fr; } }
-    .item { background: #0e141c; border:1px solid #202a3a; border-radius: 14px; padding:16px; }
+    .item { background: #fafbfc; border:1px solid var(--border); border-radius: 14px; padding:14px; }
+    [data-theme="dark"] .item { background: #0e141c; }
     .meta { color: var(--muted); font-size: 13px; }
-    .pill { font-size: 11px; background:#122033; border:1px solid #223046; border-radius: 999px; padding:2px 8px; margin-left: 8px; color:#b9c7d6; }
     .list { padding-left: 18px; }
     .list li { margin: 6px 0; }
-    footer { margin-top: 36px; color: var(--muted); font-size: 13px; text-align: center; }
-    .links { display:flex; gap:12px; flex-wrap:wrap; }
+    footer { margin-top: 24px; color: var(--muted); font-size: 13px; text-align: center; }
+    .links { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; }
     .inline-links a { margin-right: 14px; }
-    .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; background:#0c1219; border:1px solid #223046; padding:2px 6px; border-radius:6px; font-size: 12px; }
+    .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; background:#f2f5f8; border:1px solid var(--border); padding:2px 6px; border-radius:6px; font-size: 12px; }
+    .right-actions { display:flex; gap:8px; align-items:center; }
+    .copy { font-size: 12px; padding:4px 8px; border-radius: 8px; border:1px solid var(--border); background:#f6f8fb; cursor:pointer; }
+    .copy.ok { background:#e6ffed; border-color:#a7f3d0; }
+    details { border:1px dashed var(--border); border-radius: 12px; padding: 10px 12px; background:#fbfdff; }
+    details[open] { background:#f8fbff; }
   </style>
+  <!-- Analytics: choose one (uncomment and edit). Plausible by default; set your domain. -->
+  <script defer data-domain="<your-domain>.github.io" src="https://plausible.io/js/script.js"></script>
+  <!-- GA4 example: <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config','G-XXXXXXX');</script> -->
 </head>
 <body>
   <div class="wrap">
@@ -63,7 +84,7 @@
         <div class="subtitle">Generative AI for Genomics — Postdoctoral Researcher, Department of Genetics, Yale University</div>
         <div class="chips">
           <span class="chip">Generative Models (GAN/VAE/Diffusion)</span>
-          <span class="chip">Genomic Foundation Models (Evo-style LMs)</span>
+          <span class="chip">Genomic Foundation Models</span>
           <span class="chip">Promoter/Enhancer/UTR Design</span>
           <span class="chip">Mechanistic Interpretability</span>
           <span class="chip">MPRA / STARR-seq</span>
@@ -74,6 +95,10 @@
           <a href="https://scholar.google.com/citations?hl=en&user=ZKHK9ZYAAAAJ" target="_blank" rel="noreferrer">Google Scholar</a>
           <a href="https://orcid.org/0000-0003-1191-6682" target="_blank" rel="noreferrer">ORCID</a>
         </div>
+      </div>
+      <div class="right-actions">
+        <a class="btn" href="cv/Haochen_Wang_CV.pdf" download>Download CV (PDF)</a>
+        <button id="themeToggle" class="btn" title="Toggle light/dark">Toggle Theme</button>
       </div>
     </header>
 
@@ -105,108 +130,19 @@
         <div class="item">
           <strong>De novo design of insulated transcriptional regulatory system based on deep learning-predicted activity landscape</strong>
           <div class="meta">Wang H†, Xiang Y†, Liu Z†, et al. <em>Nucleic Acids Research</em>, 2025. (Cover Article)</div>
+          <button class="copy" data-bib="@article{wang2025insulated, title={De novo design of insulated transcriptional regulatory system based on deep learning-predicted activity landscape}, journal={Nucleic Acids Research}, year={2025}, author={Wang, H. and Xiang, Y. and Liu, Z. and others}}">Copy BibTeX</button>
         </div>
         <div class="item">
           <strong>Deep flanking sequence engineering for efficient promoter design using DeepSEED</strong>
           <div class="meta">Zhang P†, Wang H†, Xu H†, et al. <em>Nature Communications</em>, 2023. (Editors’ Highlight)</div>
+          <button class="copy" data-bib="@article{zhang2023deepseed, title={Deep flanking sequence engineering for efficient promoter design using DeepSEED}, journal={Nature Communications}, year={2023}, author={Zhang, P. and Wang, H. and Xu, H. and others}}">Copy BibTeX</button>
         </div>
         <div class="item">
           <strong>Synthetic promoter design in <em>E. coli</em> based on a deep generative network</strong>
           <div class="meta">Wang Y†, Wang H†, et al. <em>Nucleic Acids Research</em>, 2020. (Cover & Breakthrough; 190+ citations)</div>
+          <button class="copy" data-bib="@article{wang2020synthetic, title={Synthetic promoter design in E. coli based on a deep generative network}, journal={Nucleic Acids Research}, year={2020}, author={Wang, Y. and Wang, H. and others}}">Copy BibTeX</button>
         </div>
         <div class="item">
           <strong>GPro: Generative AI-empowered toolkit for promoter design</strong>
           <div class="meta">Wang H†, Du Q†, et al. <em>Bioinformatics</em>, 2024.</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="grid">
-        <div class="item">
-          <strong>GAN-based de novo promoter design for <em>E. coli</em></strong>
-          <div class="meta">70.8% functional rate; low similarity to native promoters.</div>
-          <ul class="list">
-            <li>Two-stage system: generator explores sequence space; predictor filters high-activity candidates.</li>
-            <li>Wet-lab validation with FACS-based assays.</li>
-            <li><a href="https://github.com/HaochenW/Deep_promoter" target="_blank" rel="noreferrer">Code</a></li>
-          </ul>
-        </div>
-        <div class="item">
-          <strong>DeepSEED — Flanking sequence engineering</strong>
-          <div class="meta">Constitutive + IPTG/Dox-inducible promoters with improved performance.</div>
-          <ul class="list">
-            <li>Hybrid approach combining domain motifs (seed) and deep generative modeling (flanks).</li>
-            <li>Validated across prokaryotic and mammalian systems.</li>
-            <li><a href="https://github.com/WangLabTHU/deepseed" target="_blank" rel="noreferrer">Code</a></li>
-          </ul>
-        </div>
-        <div class="item">
-          <strong>Orthogonal promoter design with gradient-based optimization</strong>
-          <ul class="list">
-            <li>Designed orthogonal promoters from scratch with tunable activity.</li>
-            <li>Cross-system applicability (prokaryote/eukaryote).</li>
-            <li><a href="https://github.com/HaochenW/Deep_insulated" target="_blank" rel="noreferrer">Code</a></li>
-          </ul>
-        </div>
-        <div class="item">
-          <strong>GPro — Generative AI toolkit for promoter design</strong>
-          <ul class="list">
-            <li>Standardized pipeline: generation → prediction → optimization → evaluation.</li>
-            <li>Enables non-ML users to design promoters for specific functions.</li>
-            <li><a href="https://github.com/WangLabTHU/GPro" target="_blank" rel="noreferrer">Code</a></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="experience">
-      <h2>Experience</h2>
-      <div class="grid two">
-        <div class="item">
-          <strong>Postdoctoral Associate — Yale University</strong>
-          <div class="meta">Nov 2024 – Present</div>
-          <ul class="list">
-            <li>Applied LLMs to interpret RNA sequences and regulatory codes.</li>
-            <li>Developed generative AI models for RNA sequence design; worked closely with experimentalists for validation.</li>
-          </ul>
-        </div>
-        <div class="item">
-          <strong>Research Assistant — SIAT</strong>
-          <div class="meta">Jan 2024 – Nov 2024</div>
-          <ul class="list">
-            <li>Built deep generative frameworks for DNA sequence generation and regulatory discovery.</li>
-            <li>Developed interpretability/visualization tools for neural models.</li>
-          </ul>
-        </div>
-        <div class="item">
-          <strong>Research Scientist — Cartabio Technology</strong>
-          <div class="meta">Jul 2024 – Nov 2024</div>
-          <ul class="list">
-            <li>ML pipelines for large-scale single-cell perturbation data; reproducible Docker/AWS workflows.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:hcwang1996@gmail.com">hcwang1996@gmail.com</a> &nbsp;&middot;&nbsp; Based in New Haven, CT</p>
-      <p>For collaboration or speaking, please include a brief project summary and timeline in your email.</p>
-    </section>
-
-    <footer>
-      <div class="links">
-        <span>© <span id="yr"></span> Haochen Wang</span>
-        <span>•</span>
-        <span>Built with <span class="kbd">HTML</span> + <span class="kbd">CSS</span> • Deploy on GitHub Pages</span>
-      </div>
-    </footer>
-  </div>
-
-  <script>
-    document.getElementById('yr').textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+          <button class="copy" data-bib="@articl
