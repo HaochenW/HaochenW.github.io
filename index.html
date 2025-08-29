@@ -14,10 +14,11 @@
       --card: #ffffff;
       --text: #111418;
       --muted: #5b6470;
-      --accent: #0066cc;
+      --accent: #0a66c2;
       --link: #0a66c2;
       --chip: #f2f5f8;
       --border: #e6e9ee;
+      --tag: #eef5ff;
     }
     [data-theme="dark"] {
       --bg: #0b0d10;
@@ -28,6 +29,7 @@
       --link: #89dceb;
       --chip: #1b2330;
       --border: #1f2835;
+      --tag: #0d1c2b;
     }
     * { box-sizing: border-box; }
     html, body { margin: 0; padding: 0; }
@@ -35,32 +37,32 @@
       font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
       background: var(--bg);
       color: var(--text);
-      line-height: 1.7;
-      font-size: 17px; /* 增大字体 */
+      line-height: 1.75;
+      font-size: 18px; /* 更大字体 */
     }
     a { color: var(--link); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .wrap { max-width: 980px; margin: 0 auto; padding: 40px 20px 80px; }
+    .wrap { max-width: 1000px; margin: 0 auto; padding: 40px 20px 80px; }
     header { display:flex; align-items:center; gap:24px; flex-wrap: wrap; }
-    header img { width: 96px; height:96px; border-radius: 20px; border: 1px solid var(--border); object-fit: cover; }
+    header img { width: 100px; height:100px; border-radius: 20px; border: 1px solid var(--border); object-fit: cover; }
     .title { flex: 1; min-width: 280px; }
-    h1 { margin: 0 0 8px; font-size: 34px; letter-spacing: 0.2px; }
-    h2 { font-size: 22px; }
+    h1 { margin: 0 0 8px; font-size: 36px; letter-spacing: 0.2px; }
+    h2 { font-size: 24px; margin: 0 0 10px; }
     .subtitle { color: var(--muted); font-size: 16px; }
-    .chips { margin-top: 10px; display:flex; flex-wrap:wrap; gap:8px; }
-    .chip { background: var(--chip); border: 1px solid var(--border); padding:6px 10px; border-radius: 999px; font-size: 12px; color:#3b4652; }
+    .chips { margin-top: 12px; display:flex; flex-wrap:wrap; gap:10px; }
+    .chip { background: var(--chip); border: 1px solid var(--border); padding:8px 12px; border-radius: 999px; font-size: 13px; color:#3b4652; }
     nav { margin-top: 18px; display:flex; gap:12px; flex-wrap:wrap; }
-    .btn, nav a { padding: 10px 14px; background: #f4f7fb; border: 1px solid var(--border); border-radius: 10px; font-weight: 500; color:#0f1720; }
+    .btn, nav a { padding: 10px 14px; background: #f4f7fb; border: 1px solid var(--border); border-radius: 10px; font-weight: 600; color:#0f1720; font-size: 16px; }
     nav a:hover, .btn:hover { background:#edf2f7; }
-    section { margin-top: 30px; background: var(--card); border:1px solid var(--border); border-radius: 16px; padding: 20px; }
-    .grid { display:grid; grid-template-columns: 1fr; gap:14px; }
-    @media (min-width: 820px) { .grid.two { grid-template-columns: 1fr 1fr; } }
-    .item { background: #fafbfc; border:1px solid var(--border); border-radius: 14px; padding:14px; }
+    section { margin-top: 30px; background: var(--card); border:1px solid var(--border); border-radius: 16px; padding: 22px; }
+    .grid { display:grid; grid-template-columns: 1fr; gap:16px; }
+    @media (min-width: 860px) { .grid.two { grid-template-columns: 1fr 1fr; } .grid.three { grid-template-columns: 1fr 1fr 1fr; } }
+    .item { background: #fafbfc; border:1px solid var(--border); border-radius: 14px; padding:16px; }
     [data-theme="dark"] .item { background: #0e141c; }
-    .meta { color: var(--muted); font-size: 13px; }
-    .list { padding-left: 18px; }
+    .meta { color: var(--muted); font-size: 14px; }
+    .list { padding-left: 20px; }
     .list li { margin: 6px 0; }
-    footer { margin-top: 24px; color: var(--muted); font-size: 13px; text-align: center; }
+    footer { margin-top: 24px; color: var(--muted); font-size: 14px; text-align: center; }
     .links { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; }
     .inline-links a { margin-right: 14px; }
     .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; background:#f2f5f8; border:1px solid var(--border); padding:2px 6px; border-radius:6px; font-size: 12px; }
@@ -69,9 +71,11 @@
     .copy.ok { background:#e6ffed; border-color:#a7f3d0; }
     details { border:1px dashed var(--border); border-radius: 12px; padding: 10px 12px; background:#fbfdff; }
     details[open] { background:#f8fbff; }
+    .tags { margin-top: 8px; display:flex; flex-wrap:wrap; gap:8px; }
+    .tag { background: var(--tag); border:1px solid var(--border); border-radius: 999px; padding: 4px 10px; font-size: 12px; color:#264a7b; }
   </style>
   <!-- Analytics: choose one (uncomment and edit). Plausible by default; set your domain. -->
-  <script defer data-domain="HaochenW.github.io" src="https://plausible.io/js/script.js"></script>
+  <script defer data-domain="haochenw.github.io" src="https://plausible.io/js/script.js"></script>
   <!-- GA4 example: <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config','G-XXXXXXX');</script> -->
 </head>
@@ -85,7 +89,7 @@
         <div class="chips">
           <span class="chip">Generative Models (GAN/VAE/Diffusion)</span>
           <span class="chip">Genomic Foundation Models</span>
-          <span class="chip">Promoter/Enhancer/UTR Design</span>
+          <span class="chip">LLMs for RNA</span>
           <span class="chip">Mechanistic Interpretability</span>
           <span class="chip">MPRA / STARR-seq</span>
         </div>
@@ -104,8 +108,9 @@
 
     <nav>
       <a href="#about">About</a>
-      <a href="#publications">Publications</a>
+      <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
+      <a href="#publications">Publications</a>
       <a href="#experience">Experience</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -119,9 +124,91 @@
         I am currently a postdoctoral researcher at Yale University.
       </p>
       <ul class="list">
-        <li>Focus: generative models for promoter/enhancer/UTR design; LLMs for RNA interpretation; mechanistic interpretability.</li>
-        <li>Tooling: PyTorch, TensorFlow, Python, Linux, Docker, AWS; MPRA/STARR-seq analysis.</li>
+        <li><strong>10+ years</strong> in ML + genomics; AI undergrad → Bioinformatics Ph.D. → Postdoc at Yale.</li>
+        <li>Representative work: <strong>NAR Cover/Breakthrough</strong> (GAN promoters), <strong>Nat Commun Editors’ Highlight</strong> (DeepSEED), <strong>Bioinformatics</strong> (GPro toolkit).</li>
+        <li>Recent: apply <strong>LLMs</strong> to RNA interpretation; pursue <strong>mechanistic interpretability</strong> and <strong>genomic foundation models</strong>.</li>
       </ul>
+    </section>
+
+    <section id="skills">
+      <h2>Skills at a Glance</h2>
+      <div class="grid two">
+        <div class="item">
+          <strong>AI & Deep Learning</strong>
+          <ul class="list">
+            <li>Generative AI: <em>GAN, VAE, Diffusion</em></li>
+            <li>Sequence LMs & Foundation Models (DNA/RNA)</li>
+            <li>Mechanistic interpretability, attribution, SAE</li>
+            <li>PyTorch, TensorFlow, Keras</li>
+          </ul>
+        </div>
+        <div class="item">
+          <strong>Bioinformatics</strong>
+          <ul class="list">
+            <li>Regulatory genomics: promoters/enhancers/UTRs</li>
+            <li>MPRA / STARR-seq analysis</li>
+            <li>Multi-omics integration</li>
+          </ul>
+        </div>
+        <div class="item">
+          <strong>Programming</strong>
+          <ul class="list">
+            <li>Python, C/C++, R, Shell, Matlab</li>
+            <li>Clean, tested research code; packaging</li>
+          </ul>
+        </div>
+        <div class="item">
+          <strong>Tools & Ops</strong>
+          <ul class="list">
+            <li>Linux, Git/GitHub, Docker, AWS</li>
+            <li>Jupyter/RMarkdown; data versioning</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="grid">
+        <div class="item">
+          <strong>GAN-based de novo promoter design for <em>E. coli</em></strong>
+          <div class="meta">70.8% functional rate; low similarity to native promoters.</div>
+          <div class="tags"><span class="tag">GAN</span><span class="tag">Generative design</span><span class="tag">Promoters</span><span class="tag">FACS</span></div>
+          <ul class="list">
+            <li>Two-stage system: generator explores sequence space; predictor filters high-activity candidates.</li>
+            <li>Wet-lab validation with FACS-based assays.</li>
+            <li><a href="https://github.com/HaochenW/Deep_promoter" target="_blank" rel="noreferrer">Code</a></li>
+          </ul>
+        </div>
+        <div class="item">
+          <strong>DeepSEED — Flanking sequence engineering</strong>
+          <div class="meta">Constitutive + IPTG/Dox-inducible promoters with improved performance.</div>
+          <div class="tags"><span class="tag">Hybrid design</span><span class="tag">Motifs</span><span class="tag">Generative model</span></div>
+          <ul class="list">
+            <li>Combines domain motifs (seed) with deep generative modeling (flanks).</li>
+            <li>Validated across prokaryotic and mammalian systems.</li>
+            <li><a href="https://github.com/WangLabTHU/deepseed" target="_blank" rel="noreferrer">Code</a></li>
+          </ul>
+        </div>
+        <div class="item">
+          <strong>Orthogonal promoter design with gradient-based optimization</strong>
+          <div class="tags"><span class="tag">Gradient-based</span><span class="tag">Orthogonal parts</span><span class="tag">Cross-system</span></div>
+          <ul class="list">
+            <li>Designed orthogonal promoters from scratch with tunable activity.</li>
+            <li>Cross-system applicability (prokaryote/eukaryote).</li>
+            <li><a href="https://github.com/HaochenW/Deep_insulated" target="_blank" rel="noreferrer">Code</a></li>
+          </ul>
+        </div>
+        <div class="item">
+          <strong>GPro — Generative AI toolkit for promoter design</strong>
+          <div class="tags"><span class="tag">Toolkit</span><span class="tag">Generation→Prediction→Optimization</span></div>
+          <ul class="list">
+            <li>Standardized pipeline: generation → prediction → optimization → evaluation.</li>
+            <li>Enables non-ML users to design promoters for specific functions.</li>
+            <li><a href="https://github.com/WangLabTHU/GPro" target="_blank" rel="noreferrer">Code</a></li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <section id="publications">
@@ -130,19 +217,106 @@
         <div class="item">
           <strong>De novo design of insulated transcriptional regulatory system based on deep learning-predicted activity landscape</strong>
           <div class="meta">Wang H†, Xiang Y†, Liu Z†, et al. <em>Nucleic Acids Research</em>, 2025. (Cover Article)</div>
+          <div class="tags"><span class="tag">Generative landscape</span><span class="tag">Activity prediction</span><span class="tag">Synthetic circuits</span></div>
           <button class="copy" data-bib="@article{wang2025insulated, title={De novo design of insulated transcriptional regulatory system based on deep learning-predicted activity landscape}, journal={Nucleic Acids Research}, year={2025}, author={Wang, H. and Xiang, Y. and Liu, Z. and others}}">Copy BibTeX</button>
         </div>
         <div class="item">
           <strong>Deep flanking sequence engineering for efficient promoter design using DeepSEED</strong>
           <div class="meta">Zhang P†, Wang H†, Xu H†, et al. <em>Nature Communications</em>, 2023. (Editors’ Highlight)</div>
+          <div class="tags"><span class="tag">Motif-guided</span><span class="tag">Generative flanks</span><span class="tag">MPRA</span></div>
           <button class="copy" data-bib="@article{zhang2023deepseed, title={Deep flanking sequence engineering for efficient promoter design using DeepSEED}, journal={Nature Communications}, year={2023}, author={Zhang, P. and Wang, H. and Xu, H. and others}}">Copy BibTeX</button>
         </div>
         <div class="item">
           <strong>Synthetic promoter design in <em>E. coli</em> based on a deep generative network</strong>
           <div class="meta">Wang Y†, Wang H†, et al. <em>Nucleic Acids Research</em>, 2020. (Cover & Breakthrough; 190+ citations)</div>
+          <div class="tags"><span class="tag">GAN</span><span class="tag">Promoter design</span><span class="tag">High-throughput</span></div>
           <button class="copy" data-bib="@article{wang2020synthetic, title={Synthetic promoter design in E. coli based on a deep generative network}, journal={Nucleic Acids Research}, year={2020}, author={Wang, Y. and Wang, H. and others}}">Copy BibTeX</button>
         </div>
         <div class="item">
           <strong>GPro: Generative AI-empowered toolkit for promoter design</strong>
           <div class="meta">Wang H†, Du Q†, et al. <em>Bioinformatics</em>, 2024.</div>
-          <button class="copy" data-bib="@articl
+          <div class="tags"><span class="tag">Toolkit</span><span class="tag">Reproducible</span><span class="tag">Open-source</span></div>
+          <button class="copy" data-bib="@article{wang2024gpro, title={GPro: Generative AI-empowered toolkit for promoter design}, journal={Bioinformatics}, year={2024}, author={Wang, H. and Du, Q. and others}}">Copy BibTeX</button>
+        </div>
+      </div>
+
+      <details style="margin-top:16px;">
+        <summary><strong>Show full publication list</strong></summary>
+        <div class="grid" style="margin-top:12px;">
+          <div class="item"><strong>DISMIR: Deep learning-based noninvasive cancer detection...</strong><div class="meta">Briefings in Bioinformatics, 2021.</div></div>
+          <div class="item"><strong>Design of biomolecular sequences by artificial intelligence</strong><div class="meta">Synthetic Biology Journal, 2021.</div></div>
+          <div class="item"><strong>Time-frequency concentration criterion using grayscale erosion</strong><div class="meta">IEEE ICSIP, 2016.</div></div>
+        </div>
+      </details>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <div class="grid two">
+        <div class="item">
+          <strong>Postdoctoral Associate — Yale University</strong>
+          <div class="meta">Nov 2024 – Present</div>
+          <ul class="list">
+            <li>Applied LLMs to interpret RNA sequences and regulatory codes.</li>
+            <li>Developed generative AI models for RNA sequence design; worked closely with experimentalists for validation.</li>
+          </ul>
+        </div>
+        <div class="item">
+          <strong>Research Assistant — SIAT</strong>
+          <div class="meta">Jan 2024 – Nov 2024</div>
+          <ul class="list">
+            <li>Built deep generative frameworks for DNA sequence generation and regulatory discovery.</li>
+            <li>Developed interpretability/visualization tools for neural models.</li>
+          </ul>
+        </div>
+        <div class="item">
+          <strong>Research Scientist — Cartabio Technology</strong>
+          <div class="meta">Jul 2024 – Nov 2024</div>
+          <ul class="list">
+            <li>ML pipelines for large-scale single-cell perturbation data; reproducible Docker/AWS workflows.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:hcwang1996@gmail.com">hcwang1996@gmail.com</a> &nbsp;&middot;&nbsp; Based in New Haven, CT</p>
+      <p>For collaboration or speaking, please include a brief project summary and timeline in your email.</p>
+    </section>
+
+    <footer>
+      <div class="links">
+        <span>© <span id="yr"></span> Haochen Wang</span>
+        <span>•</span>
+        <span>Built with <span class="kbd">HTML</span> + <span class="kbd">CSS</span> • Deploy on GitHub Pages</span>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Year
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Theme toggle (default light)
+    const root = document.documentElement;
+    const toggle = document.getElementById('themeToggle');
+    function setTheme(t){ root.setAttribute('data-theme', t); localStorage.setItem('theme', t); }
+    const saved = localStorage.getItem('theme');
+    if(saved){ setTheme(saved); }
+    toggle.addEventListener('click', () => {
+      const cur = root.getAttribute('data-theme');
+      setTheme(cur === 'dark' ? 'light' : 'dark');
+    });
+
+    // BibTeX copy buttons
+    function flash(btn){ btn.classList.add('ok'); setTimeout(()=>btn.classList.remove('ok'),900); }
+    document.querySelectorAll('.copy').forEach(btn=>{
+      btn.addEventListener('click', async ()=>{
+        try { await navigator.clipboard.writeText(btn.dataset.bib); flash(btn); }
+        catch(e){ alert('Copy failed.'); }
+      });
+    });
+  </script>
+</body>
+</html>
